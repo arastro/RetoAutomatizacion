@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Open;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+/*Tarea que abre el navegador*/
 public class OpenPage implements Task {
 
     private HomePage homePage;

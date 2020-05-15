@@ -20,6 +20,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class PlazaveaStepDefinition {
 
+    //Metodo que se ejecuta para crear un scenario y un actor
     @Before
     public void InitialConfiguration() {
         setTheStage(new OnlineCast());

@@ -4,9 +4,9 @@ Feature: Create an user on Gorest REST service
   @createAUser
   Scenario Outline: Creation an user
     When I try to create an user
-      |<email>|<name>|<lastname>|<gender>|
+      |<email>|<name>|<lastname>|<gender>|<token>|
     Then I should see the user created
       |<email>|<name>|<lastname>|<gender>|
     Examples:
-      |email           |name   |lastname |gender|
-      |sarahez26@sh.com|miria26|sdfsdf   |female|
+      |email           |name   |lastname |gender|token                                  |
+      |sarahez29@sh.com|miria29|sdfsdf   |female|FXXZ3Kxb8cA8NbjRpqvsxChkmQNk0vYsflfv   |

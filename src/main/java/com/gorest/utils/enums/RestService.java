@@ -1,5 +1,6 @@
 package com.gorest.utils.enums;
 
+/*enun con lista de peticiones*/
 public enum RestService {
 
     BASE_URL("https://gorest.co.in"),

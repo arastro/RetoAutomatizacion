@@ -15,6 +15,7 @@ import static com.plazavea.userinterfaces.ProducPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+/*Tarea que agrega un producto de la tienda al carrito recibiendo como parametro una lista de string*/
 public class BuyProduct  implements Task {
 
     private List<String> data;

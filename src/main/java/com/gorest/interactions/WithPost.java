@@ -10,24 +10,28 @@ import net.serenitybdd.screenplay.Interaction;
 import static com.gorest.utils.enums.RestService.BASE_URL;
 import static com.gorest.utils.enums.RestService.CREATE_USER;
 
+/*Clase que manda un REQUEST de tipo POST a la API de GOREST para crear un nuevo usuario*/
 public class WithPost implements Interaction {
     private String body;
+    private String token;
 
-    public WithPost(String body){
+    public WithPost(String body, String token){
         this.body=body;
+        this.token=token;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         RestAssured.baseURI = BASE_URL.toString();
-        try{
 
+        try{
+            /*Request de tipo POST al servicio GOREST*/
             Response response = RestAssured.given().contentType(ContentType.JSON)
-                    .queryParam("access-token","FXXZ3Kxb8cA8NbjRpqvsxChkmQNk0vYsflfv")
+                    .queryParam("access-token",token)
                     .body(body)
                     .post(CREATE_USER.toString());
 
+            /*La respuesta se guarda como una variable global de serenity para luego ser capturada en la question*/
             Serenity.setSessionVariable("response").to(response);
 
         }catch (Exception e){
