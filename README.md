@@ -1,6 +1,8 @@
 # Reto Automatizacion
-- Automatización website Plazavea  
-- Automatizacion del servicio POST de GORES  
+- Automatización website Plazavea 
+   - escenario : Agregar un producto al carrito de compras
+- Automatizacion del servicio POST de GOREST
+    - escenario : Crear un nuevo usuario.
 ### Criterios de aceptacion del proyecto
 - Screenplay
 - Java
