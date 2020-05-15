@@ -1,6 +1,11 @@
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
 
 repositories {
     mavenCentral()
@@ -16,23 +21,24 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'net.serenity-bdd.aggregator'
+ext{
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
+    //dependencies for Serenity-bdd
     implementation'net.serenity-bdd:serenity-junit:2.0.77'
     implementation'net.serenity-bdd:serenity-core:2.0.77'
     implementation'net.serenity-bdd:serenity-cucumber4:1.0.21'
     implementation'net.serenity-bdd:serenity-screenplay:2.0.77'
     implementation'net.serenity-bdd:serenity-screenplay-webdriver:2.0.77'
-
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: '2.0.9'
 
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
+    //Use JUnit test framework
     testImplementation'junit:junit:4.12'
+    //Dependency used to create the logs
     testImplementation'org.slf4j:slf4j-simple:1.7.7'
 }
 gradle.startParameter.continueOnFailure = true
